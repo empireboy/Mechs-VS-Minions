@@ -1,0 +1,1 @@
+Don't place any prefabs in this folder, create another folder first.

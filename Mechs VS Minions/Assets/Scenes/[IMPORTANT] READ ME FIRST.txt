@@ -1,0 +1,3 @@
+Read the Trello before opening or working in the main scene to prevent merge conflicts.
+
+https://trello.com/c/KkJQI6k1

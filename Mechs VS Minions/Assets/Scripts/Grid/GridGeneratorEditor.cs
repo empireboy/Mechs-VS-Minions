@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(GridCreate))]
-public class GridCreateEditor : Editor
+[CustomEditor(typeof(GridGenerator))]
+public class GridGeneratorEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        GridCreate createGridScript = (GridCreate)target;
+        GridGenerator createGridScript = (GridGenerator)target;
         if (GUILayout.Button("Generate Grid"))
         {
             createGridScript.GenerateGrid();

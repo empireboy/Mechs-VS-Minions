@@ -22,6 +22,9 @@ public class TileGenerator : MonoBehaviour
             for (int j = 0; j < height; j++)
             {
                 GameObject tile = Instantiate(_tile, gameObject.transform);
+                TileInstance tileInstance = tile.GetComponent<TileInstance>();
+                tileInstance.x = i;
+                tileInstance.y = j;
                 tile.name = "Tile [" + i + "," + j + "]";
                 tile.transform.position = new Vector3(gameObject.transform.position.x + i, 0, gameObject.transform.position.z + j);
                 _gridInstance.AddTile(i, j, tile);

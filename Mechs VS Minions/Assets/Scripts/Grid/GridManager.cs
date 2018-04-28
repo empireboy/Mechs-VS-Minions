@@ -25,4 +25,36 @@ public class GridManager : MonoBehaviour
         }
         gridArray.Clear();
     }
+
+    public bool CanMove(GameObject currentTile, Enums.direction dir)
+    {
+        GameObject currentGrid = currentTile.transform.parent.gameObject;
+        GridInstance gridInstance = currentGrid.GetComponent<GridInstance>();
+        TileInstance tileInstance = currentTile.GetComponent<TileInstance>();
+        GameObject[,] tileArray = gridInstance._tileArray;
+        GameObject tileNext = null;
+
+        switch (dir)
+        {
+            case Enums.direction.left:
+                tileNext = tileArray[tileInstance.x - 1, tileInstance.y];
+                break;
+            case Enums.direction.right:
+                tileNext = tileArray[tileInstance.x + 1, tileInstance.y];
+                break;
+            case Enums.direction.up:
+                tileNext = tileArray[tileInstance.x, tileInstance.y + 1];
+                break;
+            case Enums.direction.down:
+                tileNext = tileArray[tileInstance.x, tileInstance.y - 1];
+                break;
+        }
+
+        if (tileNext != null && tileNext.tag != "Obstacle" && tileNext.GetComponent<TileInstance>().connectedObject.tag != "Obstacle")
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -1,0 +1,2 @@
+If you are about to create a new placeable object (players, enemies, a tree or maybe a rock that is blocking you), create a folder first with the name of you placeable object.
+Scripts relating to every placeable object are placed in this folder.

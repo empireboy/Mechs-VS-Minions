@@ -8,39 +8,40 @@ public class TileUI : MonoBehaviour
         get { return _instance; }
     }
 
-    [SerializeField] private GameObject[] _placeableObjects;
-
-    private GameObject _selectedObject = null;
-
     private void Awake()
     {
         if (_instance == null) _instance = this;
     }
 
-    public void ConnectedObject(string name)
+    public void ConnectedObject(string objectName)
     {
-        int index = PlaceableObjectList.GetIndex(name);
-        GameObject placeableObject = Instantiate(_placeableObjects[index], _selectedObject.transform);
-        placeableObject.transform.position = new Vector3(_selectedObject.transform.position.x, _selectedObject.transform.position.y + 1, _selectedObject.transform.position.z);
+        GridManager.Instance.CreatePlaceableObject(objectName, GridManager.Instance.SelectedObject);
     }
 
     public void SelectedObject(GameObject selectedObject)
     {
-        if (_selectedObject == null)
+        if (GridManager.Instance.SelectedObject == null)
         {
-            _selectedObject = selectedObject;
+            GridManager.Instance.SelectedObject = selectedObject;
             GameObject panel = gameObject.transform.GetChild(0).gameObject;
             panel.SetActive(true);
-            panel.transform.position = Camera.main.WorldToScreenPoint(new Vector3(_selectedObject.transform.position.x, _selectedObject.transform.position.y + 3, _selectedObject.transform.position.z));
+            panel.transform.position = Camera.main.WorldToScreenPoint(
+                new Vector3(
+                    GridManager.Instance.SelectedObject.transform.position.x,
+                    GridManager.Instance.SelectedObject.transform.position.y + 3,
+                    GridManager.Instance.SelectedObject.transform.position.z
+                )
+            );
         }
     }
 
-    /*private int GetPlaceableObjectIndex(string name)
+    public void Close()
     {
-        for (int i = 0; i < _placeableObjects.Length; i++)
+        if (GridManager.Instance.SelectedObject != null)
         {
-            if (_placeableObjects[i].name == name) return i;
+            GridManager.Instance.SelectedObject = null;
+            GameObject panel = gameObject.transform.GetChild(0).gameObject;
+            panel.SetActive(false);
         }
-        return -1;
-    }*/
+    }
 }

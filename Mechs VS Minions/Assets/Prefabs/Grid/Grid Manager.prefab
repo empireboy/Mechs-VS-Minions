@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4847265467364834}
   - component: {fileID: 114587467009932066}
   - component: {fileID: 114742440508370506}
-  - component: {fileID: 114370164354751342}
+  - component: {fileID: 114685020090234682}
   m_Layer: 0
   m_Name: Grid Manager
   m_TagString: Untagged
@@ -42,18 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114370164354751342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1900459421590980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00044b67c6d762c4491a13c28c125bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _placeableObjects: []
 --- !u!114 &114587467009932066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,6 +54,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridArray: []
+--- !u!114 &114685020090234682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900459421590980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4e4121385dc8a4e94ddd10068e6358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _placeableObjects:
+  - {fileID: 1213568549940540, guid: ada0b86c93dcb484e856370d5395600a, type: 2}
 --- !u!114 &114742440508370506
 MonoBehaviour:
   m_ObjectHideFlags: 1

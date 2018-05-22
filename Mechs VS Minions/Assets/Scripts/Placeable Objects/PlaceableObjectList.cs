@@ -5,11 +5,11 @@ public static class PlaceableObjectList
 {
     [SerializeField] private static List<GameObject> _placeableObjects = new List<GameObject>();
 
-    public static int GetIndex(string name)
+    public static int GetIndex(string objectName)
     {
         for (int i = 0; i < _placeableObjects.Count; i++)
         {
-            if (_placeableObjects[i].name == name) return i;
+            if (_placeableObjects[i].name == objectName) return i;
         }
         return -1;
     }
@@ -17,5 +17,10 @@ public static class PlaceableObjectList
     public static void Add(GameObject gameObject)
     {
         _placeableObjects.Add(gameObject);
+    }
+
+    public static GameObject Get(int index)
+    {
+        return _placeableObjects[index];
     }
 }

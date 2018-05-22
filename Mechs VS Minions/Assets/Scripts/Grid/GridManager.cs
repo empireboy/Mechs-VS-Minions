@@ -11,6 +11,10 @@ public class GridManager : MonoBehaviour
 
     [HideInInspector] public List<GameObject> gridArray = new List<GameObject>();
 
+    private GameObject _selectedObject = null;
+
+    public GameObject SelectedObject { get; set; }
+
     private void Awake()
     {
         if (_instance == null) _instance = this;
@@ -56,5 +60,16 @@ public class GridManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void CreatePlaceableObject(string objectName, GameObject tile)
+    {
+        int index = PlaceableObjectList.GetIndex(objectName);
+        GameObject placeableObject = Instantiate(PlaceableObjectList.Get(index), tile.transform);
+        placeableObject.transform.position = new Vector3(
+            tile.transform.position.x,
+            tile.transform.position.y + 1,
+            tile.transform.position.z
+        );
     }
 }

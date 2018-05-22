@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Dropdown))]
-public class DropdownController : MonoBehaviour {
-
+public class DropdownController : MonoBehaviour
+{
     private Dropdown _dropdown;
 
     private void Awake()

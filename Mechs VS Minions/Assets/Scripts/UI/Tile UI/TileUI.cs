@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class TileUI : MonoBehaviour {
-
+public class TileUI : MonoBehaviour
+{
     private static TileUI _instance;
     public static TileUI Instance
     {
@@ -19,7 +19,7 @@ public class TileUI : MonoBehaviour {
 
     public void ConnectedObject(string name)
     {
-        int index = GetPlaceableObjectIndex(name);
+        int index = PlaceableObjectList.GetIndex(name);
         GameObject placeableObject = Instantiate(_placeableObjects[index], _selectedObject.transform);
         placeableObject.transform.position = new Vector3(_selectedObject.transform.position.x, _selectedObject.transform.position.y + 1, _selectedObject.transform.position.z);
     }
@@ -35,12 +35,12 @@ public class TileUI : MonoBehaviour {
         }
     }
 
-    private int GetPlaceableObjectIndex(string name)
+    /*private int GetPlaceableObjectIndex(string name)
     {
         for (int i = 0; i < _placeableObjects.Length; i++)
         {
             if (_placeableObjects[i].name == name) return i;
         }
         return -1;
-    }
+    }*/
 }

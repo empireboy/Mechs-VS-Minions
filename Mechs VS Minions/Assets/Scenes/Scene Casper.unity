@@ -1548,6 +1548,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114370164354751342, guid: bb93e8b98672fc24b91551be21787262,
+        type: 2}
+      propertyPath: _placeableObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4847265467364834, guid: bb93e8b98672fc24b91551be21787262, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1585,7 +1590,14 @@ Prefab:
       propertyPath: width
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114370164354751342, guid: bb93e8b98672fc24b91551be21787262,
+        type: 2}
+      propertyPath: _placeableObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1213568549940540, guid: ada0b86c93dcb484e856370d5395600a,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114370164354751342, guid: bb93e8b98672fc24b91551be21787262, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bb93e8b98672fc24b91551be21787262, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1098361289
@@ -3123,3 +3135,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2106880504}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2133442520 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1900459421590980, guid: bb93e8b98672fc24b91551be21787262,
+    type: 2}
+  m_PrefabInternal: {fileID: 1084262326}
+--- !u!114 &2133442521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133442520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4e4121385dc8a4e94ddd10068e6358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _placeableObjects:
+  - {fileID: 1213568549940540, guid: ada0b86c93dcb484e856370d5395600a, type: 2}

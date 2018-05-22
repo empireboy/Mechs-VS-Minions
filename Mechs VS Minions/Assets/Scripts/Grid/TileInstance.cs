@@ -7,6 +7,6 @@ public class TileInstance : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        TileUI.Instance.SelectedObject(gameObject);
+        TileUI.Instance.SelectObject(gameObject);
     }
 }

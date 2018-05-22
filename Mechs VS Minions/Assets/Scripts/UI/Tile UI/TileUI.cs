@@ -15,10 +15,10 @@ public class TileUI : MonoBehaviour
 
     public void ConnectedObject(string objectName)
     {
-        GridManager.Instance.CreatePlaceableObject(objectName, GridManager.Instance.SelectedObject);
+        GridManager.Instance.CreatePlaceableObject(objectName);
     }
 
-    public void SelectedObject(GameObject selectedObject)
+    public void SelectObject(GameObject selectedObject)
     {
         if (GridManager.Instance.SelectedObject == null)
         {

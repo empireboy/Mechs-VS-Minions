@@ -17,4 +17,9 @@ public class DropdownController : MonoBehaviour
         string instanceName = _dropdown.options[value].text;
         TileUI.Instance.ConnectedObject(instanceName);
     }
+
+    public void Reset()
+    {
+        _dropdown.value = 0;
+    }
 }

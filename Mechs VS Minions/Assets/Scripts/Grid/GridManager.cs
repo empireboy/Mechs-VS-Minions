@@ -72,4 +72,9 @@ public class GridManager : MonoBehaviour
             tile.transform.position.z
         );
     }
+
+    public void CreatePlaceableObject(string objectName)
+    {
+        CreatePlaceableObject(objectName, SelectedObject);
+    }
 }
